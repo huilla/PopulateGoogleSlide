@@ -32,6 +32,9 @@ def main():
     # Write a function that extracts the necessary information from the Google Sheet
     def extract_information(name):
         name_cells = wks.findall(name)  # find the cell with the given name
+        if not name_cells:
+            print(f"No matching name found: {name}")
+            exit(1)
 
         row_number = name_cells[0].row
         data = wks.row_values(row_number)
