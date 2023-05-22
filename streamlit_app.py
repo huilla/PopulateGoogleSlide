@@ -122,15 +122,14 @@ def main():
         #webbrowser.open(slide_url)
         
     # Add a text input field for the user to enter a name in Streamlit
-    name_to_extract = st.text_input("Enter the name to extract information:")
+    name_to_extract = st.text_input("Enter the name to extract information (e.g. John Doe):")
 
     # Trigger the extraction and update the Google Slide when a name is entered
     if name_to_extract:
         extract_information(name_to_extract)
         open_google_slide(slide_id)
     
-    # Test the prototype by asking the user to enter a name (e.g. John Doe)
-    # name_to_extract = input("Enter the name to extract information: ")
+    # Test the prototype
     extract_information(name_to_extract)
     open_google_slide(slide_id)
 
