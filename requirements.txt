@@ -1,2 +1,4 @@
 # Specify requirements needed for streamlit app to function
 gspread
+google-api-python-client
+webbrowser
