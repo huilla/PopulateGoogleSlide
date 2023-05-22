@@ -18,6 +18,9 @@ from google.oauth2 import service_account
 from googleapiclient.discovery import build
 
 def main():
+    # Add title
+    st.title('Extract Employee Data from a Google Sheet to a Google Slide')
+    
     # Load the service account credentials for Google Sheet and open the sheet
     sa = gspread.service_account(filename='credentials.json')
     sheet = sa.open('Employee_Data')
@@ -25,7 +28,7 @@ def main():
     
     # Get all the values from the worksheet
     data = wks.get_all_values()
-    st.title('Extract Employee Data from a Google Sheet to a Google Slide')
+    
     # Display the data in a table using Streamlit
     st.table(data)
 
@@ -119,7 +122,6 @@ def main():
         slides_service.presentations().get(presentationId=slide_id).execute()
         print("Opening Google Slide...")
         st.markdown(f'<iframe src="{slide_url}" width="800" height="600"></iframe>', unsafe_allow_html=True)
-        #webbrowser.open(slide_url)
         
     # Add a text input field for the user to enter a name in Streamlit
     name_to_extract = st.text_input("Enter the name to extract information (e.g. John Doe):")
@@ -127,7 +129,7 @@ def main():
     # Trigger the extraction and update the Google Slide when a name is entered
     if name_to_extract:
         extract_information(name_to_extract)
-        open_google_slide(slide_id)
+        #open_google_slide(slide_id)
     
     # Test the prototype
     extract_information(name_to_extract)
