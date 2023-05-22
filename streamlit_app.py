@@ -129,7 +129,6 @@ def main():
     # Trigger the extraction and update the Google Slide when a name is entered
     if name_to_extract:
         extract_information(name_to_extract)
-        #open_google_slide(slide_id)
     
     # Test the prototype
     extract_information(name_to_extract)
