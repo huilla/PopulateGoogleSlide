@@ -119,7 +119,8 @@ def main():
         # Open the slide URL using the default web browser
         slides_service.presentations().get(presentationId=slide_id).execute()
         print("Opening Google Slide...")
-        webbrowser.open(slide_url)
+        st.markdown(f'<iframe src="{slide_url}" width="800" height="600"></iframe>', unsafe_allow_html=True)
+        #webbrowser.open(slide_url)
         
     # Add a text input field for the user to enter a name
     name_to_extract = st.text_input("Enter the name to extract information:")
