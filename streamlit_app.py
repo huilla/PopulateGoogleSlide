@@ -10,6 +10,8 @@
 # 6. Share Google Sheet & Google Slide with the service account email address
 # 5. Continue with the script (see below)
 
+'# Extract information from a Google Sheet to a Google Slide'
+
 # Import the necessary libraries
 # If not installed use: pip install 'library name'
 import streamlit as st
