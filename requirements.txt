@@ -1,0 +1,2 @@
+# Specify requirements needed for streamlit app to function
+gspread
