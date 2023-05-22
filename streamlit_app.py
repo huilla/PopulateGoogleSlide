@@ -34,6 +34,7 @@ def main():
         name_cells = wks.findall(name)  # find the cell with the given name
         if not name_cells:
             print(f"No matching name found: {name}")
+            st.error(f"No matching name found: {name}")
             exit(1)
 
         row_number = name_cells[0].row
