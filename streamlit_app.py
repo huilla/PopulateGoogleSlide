@@ -130,7 +130,7 @@ def main():
         open_google_slide(slide_id)
     
     # Test the prototype by asking the user to enter a name (e.g. John Doe)
-    name_to_extract = st.text_input("Enter the name to extract information:")
+    name_to_extract = input("Enter the name to extract information: ")
     extract_information(name_to_extract)
     open_google_slide(slide_id)
 
