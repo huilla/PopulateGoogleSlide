@@ -32,10 +32,6 @@ def main():
     # Write a function that extracts the necessary information from the Google Sheet
     def extract_information(name):
         name_cells = wks.findall(name)  # find the cell with the given name
-        if not name_cells:
-            # print(f"No matching name found: {name}")
-            st.error(f"No matching name found: {name}")
-            exit(1)
 
         row_number = name_cells[0].row
         data = wks.row_values(row_number)
@@ -124,9 +120,6 @@ def main():
         
     # Add a text input field for the user to enter a name in Streamlit
     name_to_extract = st.text_input("Enter the name to extract information (e.g. John Doe):")
-    if st.button("Extract"):
-        extract_information(name_to_extract)
-        open_google_slide(slide_id)
 
     # Trigger the extraction and update the Google Slide when a name is entered
     if name_to_extract:
