@@ -122,7 +122,7 @@ def main():
         webbrowser.open(slide_url)
         
     # Add a text input field for the user to enter a name
-    # name_to_extract = st.text_input("Enter the name to extract information:")
+    name_to_extract = st.text_input("Enter the name to extract information:")
 
     # Trigger the extraction and update the Google Slide when a name is entered
     if name_to_extract:
