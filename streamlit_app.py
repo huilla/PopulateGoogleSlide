@@ -10,8 +10,6 @@
 # 6. Share Google Sheet & Google Slide with the service account email address
 # 5. Continue with the script (see below)
 
-'# Extract information from a Google Sheet to a Google Slide'
-
 # Import the necessary libraries
 # If not installed use: pip install 'library name'
 import streamlit as st
@@ -20,6 +18,7 @@ from google.oauth2 import service_account
 from googleapiclient.discovery import build
 
 def main():
+    '# Extract Information from a Google Sheet to a Google Slide'
     # Load the service account credentials for Google Sheet and open the sheet
     sa = gspread.service_account(filename='credentials.json')
     sheet = sa.open('Employee_Data')
@@ -123,7 +122,7 @@ def main():
         webbrowser.open(slide_url)
         
     # Add a text input field for the user to enter a name
-    name_to_extract = st.text_input("Enter the name to extract information:")
+    # name_to_extract = st.text_input("Enter the name to extract information:")
 
     # Trigger the extraction and update the Google Slide when a name is entered
     if name_to_extract:
@@ -131,7 +130,7 @@ def main():
         open_google_slide(slide_id)
     
     # Test the prototype by asking the user to enter a name (e.g. John Doe)
-    name_to_extract = input("Enter the name to extract information: ")
+    name_to_extract = st.text_input("Enter the name to extract information:")
     extract_information(name_to_extract)
     open_google_slide(slide_id)
 
