@@ -18,13 +18,18 @@ import streamlit as st
 import gspread
 from google.oauth2 import service_account
 from googleapiclient.discovery import build
-import webbrowser
 
 def main():
     # Load the service account credentials for Google Sheet and open the sheet
     sa = gspread.service_account(filename='credentials.json')
     sheet = sa.open('Employee_Data')
     wks = sheet.worksheet('Sheet1')
+    
+    # Get all the values from the worksheet
+    data = wks.get_all_values()
+    st.title('Employee Data')
+    # Display the data in a table using Streamlit
+    st.table(data)
 
     # Write a function that extracts the necessary information from the Google Sheet
     def extract_information(name):
